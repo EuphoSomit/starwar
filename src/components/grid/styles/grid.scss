@@ -1,0 +1,139 @@
+@import './../../../assets/scss/variables';
+
+/* define custom variables for SCSS file*/
+/* override bootstrap variables */
+/* custom mixin */
+
+.member-tab {
+  margin-bottom: size(20) !important;
+}
+.table---table-wrapper---1t2D3 {
+  border-radius: 3px;
+}
+div[class*='table---tbody'] {
+  @extend %font-regular;
+}
+div[class*='table---th---'] {
+  background: #f3f3f3 !important;
+  border: 0px solid !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+div[class*='table---th-content---'] {
+  color: #333 !important;
+}
+
+div[class*='table---table-hover---'] div[class*='table---tr-hover---'] {
+  background: #ddd !important;
+  cursor: pointer;
+}
+
+div[class*='table---td---'] {
+  border: 0px solid !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  font-size: $size-md;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f6f7fa;
+}
+
+div[class*='table---thead---']
+  div[class*='table---sortable---']
+  div[class*='table---th-content---'] {
+  font-size: $size-xs;
+  font-weight: 600;
+  &::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 10px;
+    background: url('./../../../assets/images/PP_sprite.png') no-repeat -30px -64px;
+    position: absolute;
+    margin-left: 5px;
+    top: 6px;
+  }
+}
+
+i[class*='table---order-asc---'],
+i[class*='table---order-desc---'] {
+  background-image: none !important;
+}
+
+div[class*='table---thead---']
+  div[class*='table---sortable---']:first-child
+  div[class*='table---th-content---'] {
+  &:first-child {
+    padding-left: 15px;
+  }
+}
+
+div[class*='table---thead---']
+  div[class*='table---sortable-highlight---']
+  div[class*='table---th-content---'] {
+  &:after {
+    display: none !important;
+  }
+}
+
+i[class*='table---order-asc---']:after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 5px;
+  background: url('./../../../assets/images/PP_sprite.png') no-repeat -18px -69px;
+  vertical-align: middle;
+  position: absolute;
+  margin-left: 5px;
+  top: 8px;
+}
+
+i[class*='table---order-desc---']:after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 5px;
+  background: url('./../../../assets/images/PP_sprite.png') no-repeat -18px -62px;
+  vertical-align: middle;
+  margin-left: 5px;
+  top: 6px;
+}
+
+div[class*='paginations---table-pagination---'] {
+  border-bottom: 1px solid #dee2e6;
+  text-align: right;
+}
+
+div[class*='paginations---table-pagination-block---'] {
+  margin: 10px;
+  display: inline-block;
+}
+
+.msgSubject div[class*='table---td-content---'] {
+  white-space: pre !important;
+}
+
+.msgSubject .ulOnHover:hover {
+  text-decoration: underline;
+}
+
+.msgSubject .ulOnHover.highlighted {
+  color: #00a79d;
+  text-decoration: underline;
+}
+
+.table-row-hover {
+  cursor: pointer;
+  &.tr-active {
+    border: 1px solid $color-active;
+    border-left: 1px solid $color-blue;
+  }
+}
+div[class*='table---tr-expand'] {
+  background-color: #fff;
+  cursor: default;
+}

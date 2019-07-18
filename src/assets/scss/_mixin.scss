@@ -1,0 +1,25 @@
+$base-size: 16;
+/**
+    pixel to rem converter
+*/
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+@mixin button(
+  $padding: size(7) size(30),
+  $font-size: size(14),
+  $border-radius: size(40),
+  $bg-color: $color-active,
+  $font-color: #333
+) {
+  padding: $padding;
+  display: inline-block;
+  border-radius: $border-radius;
+  background: $bg-color;
+  font-size: $font-size;
+  color: $font-color;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+}

@@ -1,0 +1,7 @@
+version: 0.0
+os: linux
+hooks:
+  Install:
+    - location: buildscripts/Pull_Container.sh
+      timeout: 20
+      runas: ec2-user

@@ -1,0 +1,173 @@
+@import './mixin';
+
+$color-primary: #00a69e;
+$color-warning: #fab040;
+$color-white: #ffffff;
+$color-black: invert($color-white);
+$color-active: #bbbdbf;
+$color-grey: #95989a;
+$color-grey-lighter: #7a7e81;
+$color-grey-lighten: #e6e7e7;
+$color-dark: #444444;
+$color-blue: #1f124f;
+$color-almold: #6e0040;
+$color-pink: #ec008b;
+$color-border: #ebebeb;
+$color-open: #3bb02e;
+$color-expired: #d62020;
+$color-outline: #5586ef;
+
+@font-face {
+  font-family: 'dosis_light';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Dosis-Light.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dosis_regular';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Dosis-Regular.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dosis_semibold';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Dosis-SemiBold.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dosis_bold';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Dosis-SemiBold.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dosis_xbold';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Dosis-ExtraBold.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Regular-Bold';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Regular-Bold.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Regular-BoldItalic';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Regular-BoldItalic.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Regular-Medium';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Regular-Medium.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Regular-MediumItalic';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Regular-MediumItalic.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Regular-SemiBold';
+
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Regular-SemiBold.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Regular-SemiBoldItalic';
+  src: url('https://s3.amazonaws.com/dev-centivo-provider-employer-resources/fonts/Regular-SemiBoldItalic.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+%dosis_light {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 300;
+}
+
+%dosis_regular {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+}
+
+%dosis_medium {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 500;
+}
+
+%dosis_semibold {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+}
+
+%dosis_bold {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700;
+}
+
+%dosis_xbold {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+}
+
+%regular_semibold {
+  font-family: 'Regular-SemiBold', sans-serif;
+}
+
+%regular_bold {
+  font-family: 'Regular-Bold', sans-serif;
+}
+
+%regular_bolditalic {
+  font-family: 'Regular-BoldItalic', sans-serif;
+}
+
+%font-regular {
+  font-family: 'Regular-Medium', sans-serif;
+}
+
+%uppercase {
+  text-transform: uppercase;
+}
+
+%ellipses {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+$size-xl: size(26);
+$size-lg: size(16);
+$size-md: size(14);
+$size-sm: size(12);
+$size-xs: size(10);
+
+$mobile: 'only screen and (max-width : 767px)';
+$tablet: 'only screen and (min-width : 768px) and (max-width : 1023px)';
+$desktop: 'only screen and (min-width : 1024px)';
