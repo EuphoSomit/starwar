@@ -1,5 +1,5 @@
 {
-  "name": "csrportalfrontend",
+  "name": "starwar",
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
     "@redux-saga/simple-saga-monitor": "^1.0.2",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",

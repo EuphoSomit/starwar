@@ -1,5 +1,4 @@
 import renderTextField from './renderTextField';
+import renderFromHelper from './renderFromHelper';
 
-export {
-    renderTextField
-}
+export { renderTextField, renderFromHelper };
