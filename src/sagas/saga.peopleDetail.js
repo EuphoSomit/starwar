@@ -9,7 +9,10 @@ import { api } from '../services';
 function* getPeopleDetailSaga(action) {
   try {
     const result = yield call(api.getPeopleDetail, action.payload);
-    yield put({ type: GET_PEOPLE_DETAIL_SUCCESS, payload: result.results });
+    yield put({
+      type: GET_PEOPLE_DETAIL_SUCCESS,
+      payload: result.data.results
+    });
   } catch (error) {
     yield put({ type: GET_PEOPLE_DETAIL_FAILURE, error });
   }

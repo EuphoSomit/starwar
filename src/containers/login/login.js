@@ -30,8 +30,8 @@ const mapDispatchToProps = dispatch => ({
   getPeopleDetail: () => dispatch(getPeopleDetail())
 });
 
-const MemberDetailContainer = connect(
+const LoginContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Login);
-export default MemberDetailContainer;
+export default LoginContainer;

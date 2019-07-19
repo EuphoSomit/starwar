@@ -6,3 +6,9 @@ export function getPeopleDetail(data) {
   const dataJson = JSON.stringify(data);
   return baseService.post(url, dataJson);
 }
+
+export function getPlanetList(data) {
+  let url = uriConstants.GET_PLANETS_API;
+  const dataJson = JSON.stringify(data);
+  return baseService.post(url, dataJson);
+}
