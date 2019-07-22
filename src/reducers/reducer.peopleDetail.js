@@ -1,6 +1,8 @@
 import * as actionType from '../constants/constant.action';
 
-const defaultState = {};
+const defaultState = {
+  authenticated: false
+};
 
 const peopleDetailReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -11,13 +13,20 @@ const peopleDetailReducer = (state = defaultState, action) => {
 
     case actionType.GET_PEOPLE_DETAIL_SUCCESS:
       return {
-        ...action.payload
+        ...state,
+        peopleDetails: action.payload
       };
 
     case actionType.GET_PEOPLE_DETAIL_FAILURE:
       return {
         loading: false
       };
+
+    case actionType.AUTH_CHECK:
+      return {
+        authenticated: true
+      };
+
     default:
       return state;
   }

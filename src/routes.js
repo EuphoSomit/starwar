@@ -1,15 +1,18 @@
 import React, { Suspense, lazy } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
+import requireAuth from './containers/login/requireAuth';
 const Login = lazy(() => import('./containers/login'));
 const Search = lazy(() => import('./containers/search'));
+const AuthButton = lazy(() => import('./containers/login/authButton'));
 
 const routes = (
   <Suspense fallback={<div />}>
-    <div className="member-page">
+    <div>
+      <AuthButton />
       <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/search" component={Search} />
+        <Route path="/login" component={Login} />
+        <Route path="/search" component={requireAuth(Search)} />
         <Redirect from="/" to="/login" />
       </Switch>
     </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import LoginForm from '../../components/login/loginForm';
-import { getPeopleDetail } from '../../actions/action.peopleDetail';
+import { getPeopleDetail, checkAuth } from '../../actions/action.peopleDetail';
 
 class Login extends Component {
   componentDidMount() {
@@ -10,7 +10,7 @@ class Login extends Component {
   }
 
   authCheck = value => {
-    console.log(value);
+    this.props.checkAuth(value);
   };
 
   render() {
@@ -27,7 +27,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getPeopleDetail: () => dispatch(getPeopleDetail())
+  getPeopleDetail: () => dispatch(getPeopleDetail()),
+  checkAuth: value => dispatch(checkAuth(value))
 });
 
 const LoginContainer = connect(
