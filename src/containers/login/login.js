@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import LoginForm from '../../components/login/loginForm';
-import { getPeopleDetail, checkAuth } from '../../actions/action.peopleDetail';
+import { getPeople, checkAuth } from '../../actions/action.people';
 
 class Login extends Component {
   componentDidMount() {
-    this.props.getPeopleDetail();
+    this.props.getPeople();
   }
 
   authCheck = value => {
@@ -14,6 +15,9 @@ class Login extends Component {
   };
 
   render() {
+    if (this.props.authenticated) {
+      return <Redirect to={'/search'} />;
+    }
     return (
       <Container component="main" maxWidth="xs">
         <LoginForm onSubmit={this.authCheck} />
@@ -23,11 +27,12 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-  peopleDetail: state.peopleDetail
+  peopleDetail: state.people.peopleDetail,
+  authenticated: state.people.authenticated
 });
 
 const mapDispatchToProps = dispatch => ({
-  getPeopleDetail: () => dispatch(getPeopleDetail()),
+  getPeople: () => dispatch(getPeople()),
   checkAuth: value => dispatch(checkAuth(value))
 });
 

@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
-import { peopleDetailWatcherSaga } from './saga.peopleDetail';
+import { peopleWatcherSaga } from './saga.people';
 import { planetListWatcherSaga } from './saga.planets';
 
 export default function* root() {
-  yield all([peopleDetailWatcherSaga(), planetListWatcherSaga()]);
+  yield all([peopleWatcherSaga(), planetListWatcherSaga()]);
 }

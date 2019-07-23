@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 import { reducer as reduxFormReducer } from 'redux-form';
-import peopleDetailReducer from './reducer.peopleDetail';
+import peopleReducer from './reducer.people';
 import planetsReducer from './reducer.planets';
 
 const rootReducer = combineReducers({
+  authentication: false,
   form: reduxFormReducer,
-  peopleDetail: peopleDetailReducer,
+  people: peopleReducer,
   planets: planetsReducer
 });
 

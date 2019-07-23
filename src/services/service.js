@@ -12,7 +12,7 @@ export const baseService = {
 //Get Call
 function get(url, header) {
   return axios
-    .get(url, { headers: '' })
+    .get(url, { headers: { 'Access-Control-Allow-Origin': '*' } })
     .then(handleResponse)
     .catch(error);
 }

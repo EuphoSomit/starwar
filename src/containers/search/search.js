@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import SearchBox from '../../components/search/searchBox';
+import SearchBoxResult from '../../components/search/searchBoxResult';
 import { getPlanetDetails, getPlanetList } from '../../actions/action.planets';
 
 class Search extends Component {
@@ -21,6 +22,9 @@ class Search extends Component {
             planetList={this.props.planetList}
             planetDetails={this.getPlanetDetails}
           />
+          {this.props.planetDetails && this.props.planetDetails.length > 0 ? (
+            <SearchBoxResult planetDetails={this.props.planetDetails} />
+          ) : null}
         </Container>
       </>
     );

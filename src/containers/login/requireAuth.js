@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 export default function requireAuth(WrappedComponent) {
   class Authentication extends Component {
     render() {
       if (!this.props.authenticated) {
-        return <Redirect to="/" />;
+        return (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: this.props.location }
+            }}
+          />
+        );
       }
 
       return <WrappedComponent {...this.props} />;
@@ -14,8 +21,8 @@ export default function requireAuth(WrappedComponent) {
   }
 
   function mapStateToProps(state) {
-    return { authenticated: state.authenticated };
+    return { authenticated: state.people.authenticated };
   }
 
-  return connect(mapStateToProps)(Authentication);
+  return connect(mapStateToProps)(withRouter(Authentication));
 }
